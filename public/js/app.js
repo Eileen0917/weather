@@ -26,7 +26,7 @@ wearther_form.addEventListener('submit', (e) => {
     message_one.textContent = 'Loading...'
     message_two.textContent = ''
 
-    fetch('http://localhost:3000/weather?address=' + encodeURIComponent(location)).then((response) => {
+    fetch('/weather?address=' + encodeURIComponent(location)).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 message_one.textContent = data.error
